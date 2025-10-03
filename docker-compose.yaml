@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: app.dockerfile
     environment:
-      - SEARXNG_API_URL=http://searxng:8080
+      - SEARXNG_API_URL=https://searxng.martin-linde.com
       - DATA_DIR=/home/perplexica
     # ports:
       # - 3000:3000
