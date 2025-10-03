@@ -5,8 +5,8 @@ services:
       - ./searxng:/etc/searxng:rw
     # ports:
       # - 4000:8080
-    networks:
-      - perplexica-network
+    # networks:
+      # - perplexica-network
     restart: unless-stopped
 
   app:
@@ -19,16 +19,16 @@ services:
       - DATA_DIR=/home/perplexica
     # ports:
       # - 3000:3000
-    networks:
-      - perplexica-network
+    # networks:
+      # - perplexica-network
     volumes:
       - backend-dbstore:/home/perplexica/data
       - uploads:/home/perplexica/uploads
       - ./config.toml:/home/perplexica/config.toml
     restart: unless-stopped
 
-networks:
-  perplexica-network:
+# networks:
+  # perplexica-network:
 
 volumes:
   backend-dbstore:
