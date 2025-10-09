@@ -14,6 +14,9 @@ services:
       context: .
       dockerfile: app.dockerfile
     environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
       - SEARXNG_API_URL=https://searxng.martin-linde.com
       - DATA_DIR=/home/perplexica
     # ports:
