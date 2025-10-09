@@ -3,16 +3,16 @@ SIMILARITY_MEASURE = "cosine" # "cosine" or "dot"
 KEEP_ALIVE = "5m" # How long to keep Ollama models loaded into memory. (Instead of using -1 use "-1m")
 
 [MODELS.OPENAI]
-API_KEY = ""
+API_KEY = "${OPENAI_API_KEY}"
 
 [MODELS.GROQ]
 API_KEY = ""
 
 [MODELS.ANTHROPIC]
-API_KEY = ""
+API_KEY = "${ANTHROPIC_API_KEY}"
 
 [MODELS.GEMINI]
-API_KEY = ""
+API_KEY = "${GEMINI_API_KEY}"
 
 [MODELS.CUSTOM_OPENAI]
 API_KEY = ""
