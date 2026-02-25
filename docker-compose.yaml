@@ -8,10 +8,10 @@ services:
   app:
     image: itzcrazykns1337/perplexica:latest
     environment:
-      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      # - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      # - GEMINI_API_KEY=${GEMINI_API_KEY}
       - SEARXNG_API_URL=https://searxng.martin-linde.com
       - DATA_DIR=/home/perplexica
     volumes:
