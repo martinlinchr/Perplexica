@@ -1,14 +1,28 @@
 services:
-  perplexica:
+  searxng:
+    image: docker.io/searxng/searxng:latest
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    restart: unless-stopped
+
+  app:
     image: itzcrazykns1337/perplexica:latest
     build:
       context: .
-    ports:
-      - '3000:3000'
+      dockerfile: app.dockerfile
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - SEARXNG_API_URL=https://searxng.martin-linde.com
+      - DATA_DIR=/home/perplexica
     volumes:
-      - data:/home/perplexica/data
+      - backend-dbstore:/home/perplexica/data
+      - uploads:/home/perplexica/uploads
+      - ./config.toml:/home/perplexica/config.toml
     restart: unless-stopped
 
 volumes:
-  data:
-    name: 'perplexica-data'
+  backend-dbstore:
+  uploads:
